@@ -4,6 +4,10 @@
   "paused": false,
   "stopped": false,
   "mailbox": "dirkbusmann@gmail.com",
-  "lastKnownAction": "Initiale Struktur angelegt",
-  "lastUpdated": "2026-04-08T15:24:00Z"
+  "mode": "rules-first",
+  "intervalMinutes": 10,
+  "lastRun": null,
+  "lastRunResult": null,
+  "lastKnownAction": "Konfiguration für ressourcenschonenden 10-Minuten-Betrieb vorbereitet",
+  "lastUpdated": "2026-04-08T15:41:00Z"
 }

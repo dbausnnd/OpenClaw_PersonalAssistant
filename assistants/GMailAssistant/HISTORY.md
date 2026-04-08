@@ -14,6 +14,11 @@
   - `08 Werbung / Newsletter`
   - `09 Unwichtig`
 - Bereits ein größerer Teil des Posteingangs wurde kategorisiert
+- Betriebsmodus für ressourcenschonenden Dauerbetrieb festgelegt:
+  - rules-first
+  - alle 10 Minuten
+  - nur ungelabelte Inbox-Mails
+  - kein Standard-LLM-Einsatz
 
 ### Bereits festgelegte Sonderregeln
 - Kleinanzeigen-Kommunikation -> `05 Shopping`

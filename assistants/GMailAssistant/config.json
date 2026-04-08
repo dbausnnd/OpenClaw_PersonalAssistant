@@ -1,8 +1,14 @@
 {
   "name": "GMailAssistant",
   "provider": "gmail",
-  "status": "active",
   "mailbox": "dirkbusmann@gmail.com",
+  "mode": "rules-first",
+  "status": "active",
+  "intervalMinutes": 10,
+  "batchSize": 50,
+  "processOnlyInbox": true,
+  "processOnlyUnlabeled": true,
+  "llmFallback": false,
   "labelPriority": [
     "01 Spam / Verdächtig",
     "02 Systemmeldungen",
@@ -22,7 +28,8 @@
     "09 Unwichtig"
   ],
   "notes": [
-    "Weitere Regeln und Assistenten können später ergänzt werden.",
-    "Bei Änderungen an den Kategorien sollten REGELN.md und HISTORY.md mit gepflegt werden."
+    "Rules-first run every 10 minutes to keep inbox small without LLM cost.",
+    "Only mails without one of the assistant labels should be processed.",
+    "If rules or categories change, update REGELN.md and HISTORY.md and push to GitHub."
   ]
 }
