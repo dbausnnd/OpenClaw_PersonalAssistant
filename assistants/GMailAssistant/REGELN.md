@@ -88,3 +88,4 @@ Archivieren bedeutet:
 - Regeln dürfen erweitert werden
 - Änderungen sollen in `HISTORY.md` dokumentiert werden
 - Der Assistent soll später pausierbar und stoppbar sein
+- Wenn Regeln, Kategorien, Prioritäten, Archivierungslogik oder Struktur geändert werden, müssen die Dateien in diesem Repository aktualisiert, committed und nach GitHub gepusht werden

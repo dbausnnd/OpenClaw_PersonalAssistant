@@ -24,6 +24,9 @@
 - VitaDock -> `04 Wichtig / Persönlich`
 - Doreen Busmann -> `04 Wichtig / Persönlich`
 
+### Governance-Regel
+- Wenn Regeln, Kategorien, Prioritäten, Archivierungslogik oder Struktur geändert werden, müssen die Dateien im Repository aktualisiert, committed und nach GitHub gepusht werden.
+
 ## Hinweis
 
 Diese Datei dient als Verlauf der Regelentwicklung. Spätere Änderungen und Lernpunkte sollen hier ergänzt werden.
