@@ -6,8 +6,8 @@
   "mailbox": "dirkbusmann@gmail.com",
   "mode": "rules-first",
   "intervalMinutes": 10,
-  "lastRun": null,
-  "lastRunResult": null,
-  "lastKnownAction": "Konfiguration für ressourcenschonenden 10-Minuten-Betrieb vorbereitet",
-  "lastUpdated": "2026-04-08T15:41:00Z"
+  "lastRun": "2026-04-08T15:45:19Z",
+  "lastRunResult": "processed=4, archived=4, skipped=0",
+  "lastKnownAction": "Automatischer 10-Minuten-Lauf ausgeführt",
+  "lastUpdated": "2026-04-08T15:45:19Z"
 }
