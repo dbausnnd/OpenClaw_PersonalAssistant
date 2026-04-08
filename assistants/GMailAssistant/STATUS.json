@@ -1,0 +1,9 @@
+{
+  "name": "GMailAssistant",
+  "status": "active",
+  "paused": false,
+  "stopped": false,
+  "mailbox": "dirkbusmann@gmail.com",
+  "lastKnownAction": "Initiale Struktur angelegt",
+  "lastUpdated": "2026-04-08T15:24:00Z"
+}
