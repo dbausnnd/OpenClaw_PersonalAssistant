@@ -77,8 +77,9 @@ Archivieren bedeutet:
 
 ### LinkedIn
 - Kontaktanfragen -> `04 Wichtig / Persönlich`
-- Einladungen -> `03 Termineinladungen`
+- Sammel-Einladungsmails ("Sie haben über 10 neue Einladungen", "neue Einladungen") -> `09 Unwichtig`
 - Jobalerts / Profilbesuche / allgemeines Rauschen -> `09 Unwichtig`
+- **Hinweis**: LinkedIn-Mails mit dem Wort "Einladung" im Betreff wurden früher fälschlicherweise als `03 Termineinladungen` klassifiziert, weil das Wort "einladung" auch in der allgemeinen Termin-Regel matcht. LinkedIn-Mails haben nun Vorrang vor der allgemeinen Termin-Regel.
 
 ### GitHub
 - Sicherheits- und Verifikationsmails -> `04 Wichtig / Persönlich`

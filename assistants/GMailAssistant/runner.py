@@ -57,6 +57,8 @@ def classify(fromv: str, subj: str, snippet: str) -> str:
         return '04 Wichtig / Persönlich'
     if any(x in text for x in ['lottery', 'crypto guaranteed', 'won prize']):
         return '01 Spam / Verdächtig'
+    if 'linkedin' in fromv and any(x in text for x in ['sie haben über 10 neue einladungen', 'sie haben 10+ neue einladungen', 'neue einladungen', 'nachrichten anzeigen']):
+        return '09 Unwichtig'
     if any(x in text for x in ['invite', 'einladung', 'calendar', 'termin', 'meeting']):
         return '03 Termineinladungen'
     if ('github' in fromv and any(x in subj for x in ['verify', 'sudo', 'token', 'ssh authentication public key', 'google identity'])) or ('notion' in fromv and 'login code' in subj) or ('linkedin' in fromv and 'kontaktanfrage' in subj) or any(x in text for x in ['verification code', 'password reset', 'security alert', 'kontaktanfrage']):

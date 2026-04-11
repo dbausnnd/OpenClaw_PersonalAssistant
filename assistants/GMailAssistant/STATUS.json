@@ -6,8 +6,8 @@
   "mailbox": "dirkbusmann@gmail.com",
   "mode": "rules-first",
   "intervalMinutes": 10,
-  "lastRun": "2026-04-08T15:45:19Z",
-  "lastRunResult": "processed=4, archived=4, skipped=0",
+  "lastRun": "2026-04-11T05:11:39Z",
+  "lastRunResult": "processed=0, archived=0, skipped=9",
   "lastKnownAction": "Automatischer 10-Minuten-Lauf ausgeführt",
-  "lastUpdated": "2026-04-08T15:45:19Z"
+  "lastUpdated": "2026-04-11T05:11:39Z"
 }

@@ -32,6 +32,15 @@
 ### Governance-Regel
 - Wenn Regeln, Kategorien, Prioritäten, Archivierungslogik oder Struktur geändert werden, müssen die Dateien im Repository aktualisiert, committed und nach GitHub gepusht werden.
 
+## 2026-04-11
+
+### Fehlklassifikation LinkedIn-Einladungsmails behoben
+- Problem: LinkedIn-Sammel-Mails wie "Sie haben über 10 neue Einladungen" wurden als `03 Termineinladungen` klassifiziert
+- Ursache: Allgemeine Termin-Regel trifft auf das Wort "einladung" im Betreff
+- Fix: LinkedIn-Mails werden jetzt **vor** der allgemeinen Termin-Regel geprüft
+- Neue Regel: LinkedIn-Mails mit "neue einladungen" im Text -> `09 Unwichtig`
+- Betroffene Dateien: `runner.py`, `REGELN.md`
+
 ## Hinweis
 
 Diese Datei dient als Verlauf der Regelentwicklung. Spätere Änderungen und Lernpunkte sollen hier ergänzt werden.
