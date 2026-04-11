@@ -1,0 +1,13 @@
+{
+  "name": "WhatsAppAssistant",
+  "status": "active",
+  "mode": "draft-only",
+  "channelScope": ["whatsapp", "telegram", "teams", "email"],
+  "sendBehavior": "assistant-drafts-user-sends",
+  "styleSkill": "skills/Dirk-Kommunikationsstil/SKILL.md",
+  "notes": [
+    "Version 1 formuliert Nachrichten im Namen von Dirk, versendet aber nicht autonom.",
+    "Der Nutzer gibt Empfänger, Anliegen und optional Ton/Knappheit vor.",
+    "Nachrichten sollen Dirks Kommunikationsstil folgen."
+  ]
+}
