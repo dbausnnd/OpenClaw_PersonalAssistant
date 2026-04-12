@@ -4,6 +4,8 @@
   "paused": false,
   "stopped": false,
   "mode": "draft-only",
-  "lastKnownAction": "Initiale Konfiguration angelegt",
-  "lastUpdated": "2026-04-11T15:16:00Z"
+  "deepLinkIntegration": "parked",
+  "contactsIntegration": "parked",
+  "lastKnownAction": "Deep-Link-Integration geparkt; bei Entwurfsmodus geblieben",
+  "lastUpdated": "2026-04-12T15:43:00Z"
 }
