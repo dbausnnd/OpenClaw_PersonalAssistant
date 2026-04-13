@@ -4,15 +4,43 @@
   "documentationRequired": true,
   "rollbackRequired": true,
   "systemChangesStarted": false,
-  "lastUpdated": "2026-04-13T07:24:00Z",
+  "lastUpdated": "2026-04-13T12:06:00Z",
+  "decisions": {
+    "containerRuntime": "docker",
+    "swap": "1-2GB",
+    "subdomain": "obsidian.dirkbusmann.de",
+    "reverseProxy": "nginx",
+    "https": "letsencrypt",
+    "ipFilter": false,
+    "encryption": {
+      "transport": "https",
+      "endToEnd": "livesync-passphrase"
+    },
+    "backup": {
+      "markdown": "git-additional",
+      "couchdb": "filesystem-daily",
+      "location": "/root/backups/obsidian/",
+      "externalStorage": "open-later"
+    },
+    "credentials": {
+      "storage": ".env-600",
+      "neverInGit": true,
+      "rotation": "on-demand"
+    },
+    "firstSync": "mac-vault-is-leading"
+  },
   "plannedComponents": [
-    "docker-or-podman",
-    "swap-optional",
+    "docker",
+    "swap-1-2gb",
     "couchdb",
-    "reverse-proxy-optional"
+    "nginx-reverse-proxy",
+    "letsencrypt-https"
   ],
   "notes": [
     "Store all settings under project name for later rollback",
-    "Keep backups before any system-level change"
+    "Keep backups before any system-level change",
+    "obsidian.dirkbusmann.de A-Record needs to be set at Strato before Nginx/Certbot setup",
+    "Encryption: both transport (HTTPS) and end-to-end (LiveSync passphrase) active",
+    "IP filter rejected: mobile devices have dynamic IPs"
   ]
 }

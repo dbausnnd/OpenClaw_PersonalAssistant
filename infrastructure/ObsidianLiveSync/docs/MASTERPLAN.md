@@ -360,22 +360,20 @@ Die LiveSync-Datenbank auf dem VPS bereitstellen.
 ### Ziel
 CouchDB so bereitstellen, dass Dirks Geräte zuverlässig synchronisieren können.
 
-### Varianten
-#### Variante A – Direktzugriff auf CouchDB-Port
-- einfacher
-- aber schlechtere Sicherheitslage
+### Entscheidung
+**Variante B – Reverse Proxy mit HTTPS**
 
-#### Variante B – Reverse Proxy mit HTTPS
-- sauberer
-- besser kontrollierbar
-- empfehlenswert
-
-### Empfehlung
-**Variante B**
+Direktzugriff auf den rohen CouchDB-Port wurde verworfen.
+Die Umsetzung erfolgt direkt über:
+- Subdomain: `obsidian.dirkbusmann.de`
+- Reverse Proxy: Nginx
+- HTTPS: Let's Encrypt / Certbot
+- kein IP-Filter, da mobile Geräte beteiligt sind
+- zusätzliche Sicherheit über starkes Passwort + LiveSync-Verschlüsselung
 
 ### Schritte
-1. Domain/Subdomain oder feste Zieladresse festlegen
-2. Nginx oder vorhandenen Reverse Proxy konfigurieren
+1. DNS bei Strato: `obsidian.dirkbusmann.de` → VPS-IP
+2. Nginx konfigurieren
 3. HTTPS aktivieren
 4. Zugriff testen
 5. Konfiguration dokumentieren
@@ -421,28 +419,18 @@ Definieren, wie der Assistent im Vault arbeiten darf.
 
 ## 12. Offene Entscheidungen
 
-Vor der echten Umsetzung sind noch Entscheidungen sinnvoll:
+## 12. Entscheidungen aus dem Planungsgespräch
 
-1. **Docker ja oder Podman?**
-   - aktuelle Empfehlung: Docker
-
-2. **Swap ja oder nein?**
-   - aktuelle Empfehlung: ja, klein (1–2 GB)
-
-3. **CouchDB direkt oder hinter Reverse Proxy?**
-   - aktuelle Empfehlung: Reverse Proxy
-
-4. **Welche Adresse/Domain soll genutzt werden?**
-   - noch offen
-
-5. **Wie sollen Credentials verwaltet werden?**
-   - noch offen, aber nicht im Git
-
-6. **Wie soll Backup konkret aussehen?**
-   - noch offen
-
-7. **Wie erfolgt die Erstkopplung des bestehenden Vaults?**
-   - noch offen, muss sauber geplant werden
+1. **Container-Laufzeit:** Docker
+2. **Swap:** ja, klein (1–2 GB)
+3. **Exponierung:** Reverse Proxy statt direktem CouchDB-Port
+4. **Subdomain:** `obsidian.dirkbusmann.de`
+5. **Credential-Management:** `.env` lokal auf dem VPS, nie im Git
+6. **Backup:** Git zusätzlich für Markdown-Historie, Dateisystem-Backup für Vault + CouchDB
+7. **Erstkopplung:** Mac-Vault ist führend
+8. **IP-Filter:** nein, wegen mobiler Geräte
+9. **Sicherheit:** HTTPS + starkes Passwort + LiveSync-Ende-zu-Ende-Verschlüsselung
+10. **Passwort-Rotation:** bei Bedarf
 
 ---
 
@@ -462,7 +450,8 @@ Wenn ich das Vorhaben heute sauber bauen würde, wäre die Zielkonfiguration:
 
 ### Exponierung
 - Reverse Proxy mit HTTPS
-- kein offener roher CouchDB-Port ins Internet, wenn vermeidbar
+- Subdomain: `obsidian.dirkbusmann.de`
+- kein offener roher CouchDB-Port ins Internet
 
 ### Obsidian
 - Self-hosted LiveSync Plugin auf allen Geräten
@@ -487,6 +476,9 @@ Folgende Punkte sind bereits klar:
 - alles soll unter dem Namen `ObsidianLiveSync` geführt werden
 - Rückbau muss jederzeit möglich sein
 - jede Änderung soll nachvollziehbar bleiben
+- Reverse Proxy + HTTPS wird direkt von Anfang an eingerichtet
+- Subdomain: `obsidian.dirkbusmann.de`
+- LiveSync-Verschlüsselung wird aktiv verwendet
 
 ---
 

@@ -1,0 +1,3 @@
+infrastructure/ObsidianLiveSync/config/.env
+infrastructure/ObsidianLiveSync/config/*.env
+infrastructure/ObsidianLiveSync/backups/

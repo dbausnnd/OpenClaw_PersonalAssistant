@@ -206,20 +206,19 @@ Nginx — wird auf dem VPS am häufigsten eingesetzt, gut dokumentiert.
 Falls bereits ein Nginx-Prozess auf dem VPS läuft: prüfen und ggf. erweitern.
 
 ### Domain / Subdomain
-Noch offen — Dirk muss eine Domain oder Subdomain benennen.
+**Entschieden:** `obsidian.dirkbusmann.de`
 
-Optionen:
-- **Subdomain einer bestehenden Domain** (empfohlen, z. B. `obsidian.dirk-domain.de`)
-- **eigene Domain** neu registriert
-- **IP + Port** (technisch möglich, nicht empfohlen — kein HTTPS möglich)
+- bestehende Domain bei Strato: `dirkbusmann.de`
+- Hauptdomain bleibt unberührt (zeigt weiterhin auf Synology)
+- DNS-Eintrag: A-Record `obsidian` → VPS-IP
 
 ### HTTPS
 - Let's Encrypt via Certbot (kostenfrei, weit verbreitet)
 - Certbot kann direkt auf dem VPS installiert werden
 
-### Zusätzliche Absicherung (optional)
-- IP-Filter: nur bekannte Dirk-IPs zugelassen
-- Basic Auth vor CouchDB-Login als zweite Schicht
+### Zusätzliche Absicherung
+- **IP-Filter: abgelehnt** (mobile Geräte mit wechselnden IPs)
+- Sicherheit stattdessen über: CouchDB-Auth + HTTPS + LiveSync-Passphrase + Nginx
 
 ### Konfigurationsdateien
 Nginx-Konfig-Datei wird nach Erstellung gesichert unter:
@@ -265,14 +264,16 @@ Das System gilt als „stabil in Betrieb" wenn:
 
 ---
 
-## Offene Punkte (noch nicht geklärt)
+## Entschiedene Punkte (Stand 13.04.2026)
 
-| Punkt | Offen |
+| Punkt | Entscheidung |
 |---|---|
-| Domain / Subdomain für Reverse Proxy | Dirk muss Subdomain benennen |
-| Passwort-Rotation Turnus | noch nicht entschieden |
-| Externer Backup-Speicher | noch nicht entschieden |
-| IP-Filter für Nginx | optional, noch nicht entschieden |
+| Domain / Subdomain | `obsidian.dirkbusmann.de` |
+| Passwort-Rotation | bei Bedarf |
+| Backup-Speicher | lokal auf VPS, extern optional später |
+| IP-Filter | nein (Mobilgeräte) |
+| Verschlüsselung | aktiv: HTTPS + LiveSync-Passphrase |
+| Reverse Proxy | Nginx + Let's Encrypt, direkt von Anfang an |
 
 ---
 
