@@ -26,6 +26,15 @@ Vor jedem Umbau ergänzen:
 
 ## Rückbau Phase 1
 
+### Tatsächlich durchgeführte Änderungen am 2026-04-14
+- Docker CE installiert über offizielles Docker-Repository
+- Docker-Dienst aktiviert (`systemctl enable --now docker`)
+- 2 GB Swap-Datei unter `/swapfile` angelegt und in `/etc/fstab` eingetragen
+- Datei `/root/OpenClaw_PersonalAssistant/infrastructure/ObsidianLiveSync/config/.env` angelegt (Rechte 600, nicht im Git)
+- Datenpfad `/root/data/couchdb/` angelegt
+- Datei `infrastructure/ObsidianLiveSync/config/docker-compose.yml` angelegt
+- Container `couchdb-livesync` gestartet
+
 ### Docker entfernen
 ```bash
 apt-get purge -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
@@ -46,8 +55,10 @@ rm -f /swapfile
 ```bash
 cd /root/OpenClaw_PersonalAssistant/infrastructure/ObsidianLiveSync/config
 docker compose down
+docker rm -f couchdb-livesync 2>/dev/null || true
 rm -rf /root/data/couchdb
 rm -f /root/OpenClaw_PersonalAssistant/infrastructure/ObsidianLiveSync/config/.env
+rm -f /root/OpenClaw_PersonalAssistant/infrastructure/ObsidianLiveSync/config/docker-compose.yml
 ```
 
 ## Prinzipien

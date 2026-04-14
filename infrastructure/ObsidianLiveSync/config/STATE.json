@@ -1,10 +1,10 @@
 {
   "name": "ObsidianLiveSync",
-  "status": "planning",
+  "status": "phase1-complete-awaiting-dns",
   "documentationRequired": true,
   "rollbackRequired": true,
-  "systemChangesStarted": false,
-  "lastUpdated": "2026-04-13T12:06:00Z",
+  "systemChangesStarted": true,
+  "lastUpdated": "2026-04-14T13:08:00Z",
   "decisions": {
     "containerRuntime": "docker",
     "swap": "1-2GB",
@@ -31,16 +31,25 @@
   },
   "plannedComponents": [
     "docker",
-    "swap-1-2gb",
+    "swap-2gb",
     "couchdb",
     "nginx-reverse-proxy",
     "letsencrypt-https"
+  ],
+  "implementedComponents": [
+    "docker",
+    "swap-2gb",
+    "couchdb-local-only"
   ],
   "notes": [
     "Store all settings under project name for later rollback",
     "Keep backups before any system-level change",
     "obsidian.dirkbusmann.de A-Record needs to be set at Strato before Nginx/Certbot setup",
-    "Encryption: both transport (HTTPS) and end-to-end (LiveSync passphrase) active",
-    "IP filter rejected: mobile devices have dynamic IPs"
+    "Encryption target remains both transport (HTTPS) and end-to-end (LiveSync passphrase)",
+    "IP filter rejected: mobile devices have dynamic IPs",
+    "Docker installed successfully on 2026-04-14",
+    "2 GB swap active via /swapfile",
+    "CouchDB 3.3.3 running as docker container bound only to 127.0.0.1:5984",
+    "Next phase blocked only by missing DNS for obsidian.dirkbusmann.de"
   ]
 }
